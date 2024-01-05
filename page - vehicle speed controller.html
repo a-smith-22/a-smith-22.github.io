@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Vehicle Speed Controller</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>AS</strong> <span>Andrew Smith</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="landing - udel.html">University of Delaware</a></li>
+						<li><a href="landing - harford tech.html">Harford Technical High School</a></li>
+						<li><a href="landing - personal.html">Personal</a></li>
+						<li><a href="about me.html">About Me</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Vehicle Speed Controller</h1>
+									</header>
+									<h2>Background</h2>
+									<p>The Information and Decision Science Laboratory at the University of Delaware has a Scaled Smart City (IDS3C) that it uses for testing autonomous vehicles and various robotic and computer science projects. In this project, my team was tasked with developing a speed trajectory controller using Proportional-Integral-Derivative (PID) controls for a scaled robotic car (1:25 scale). </p>
+									<a href="https://youtu.be/xWx2w08jNHY?si=FdzM_7W3wj7WLWoN"><span class="image main"><img src="images/IDS3C_City.png" alt="" /></span></a>
+									<p>The controller design also has several constraints for functionality as outlined by the project scope:</p>
+									<ul>
+										<li>Overshoot must be less than 25% of the desired speed</li>
+										<li>Settling time must be less than 0.2s</li>
+										<li>Steady-state error should not exceed 10%</li>
+									</ul>
+
+									<h2>Calculations</h2>
+									<p>In order to create this PID controller, the system must first be modelled to understand the speed trajectory dynamics. For this, the car was assumed to operate similar to a dampened system which allows the driving force of the car to be related to the final speed output. With this, a first order differential equation was created relating the speed of the vehicle to input step response and various constant parameters such as the mass (m) and damping coefficient (b). Using Laplacian transforms, this differential equation was simplified to determine that the steady state velocity of the vehicle should approach v = F/b where F is the applied force. </p>
+									<span class="image main"><img src="images/IDC3C_Model.png" alt="" /></span>
+									<p>These calculations allowed two key components of the controller to be formed. First, the relationship between the steady state speed, the applied force, and the damping coefficient of the car could be used alongside experimental data collected to determine the approximate damping coefficient of the system and tune the constant parameters. Second, with the plant equation calculated using the dynamics of the system, a transfer function can be written. This transfer function will be used to relate the PID controller constants to the time domain specifications as outlined in the project scope in order to create the best performing controller.</p>
+									<div class="row">
+										<div class="col-5 col-12-medium">
+											<span class="image main"><img src="images/IDS3C_Transfer-Function.png" alt="" /></span>
+										</div>
+										<div class="col-7 col-12-medium">
+											<h3>Controller Gains</h3>
+											<p>With Equations B5c and B6, the time domain specifications for a second-order system are related to the controller gains desired. By inspection of the transfer function denominator b(s), the Kd term can be solved for by relating it to the mass of the vehicle. For the Kp and Ki gains, second-order approximations are used to relate the damping ratio and natural frequency to the prescribed time domain specifications. With this analysis and subsequent approximations, the following gains were found:</p>
+											<ul>
+												<li>Kp = 41.418</li>
+												<li>Ki = 3245.581</li>
+												<li>Kd = 0.566</li>
+											</ul>
+										</div>
+									</div>
+
+									<h2>Results</h2>
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<h3>Simulated Response</h3>
+											<p>The gains found from before were first simulated in MATLAB to verify the accuracy of the approximations used. With an applied step input, the system had an overshoot of Mp = 13.65%, a settling time of ts = 0.14s, and a steady state error of 3.4% within the 0.25s domain analyzed. Note that the non-zero Ki term necessitates zero steady state error with a wider simulation domain. </p>
+											<span class="image main"><img src="images/IDS3C_Results-1.png" alt="" /></span>
+										</div>
+										<div class="col-6 col-12-medium">
+											<h3>Laboratory Testing</h3>
+											<p>With these results theoretically validated, the gains were programmed into a robotic car in the IDS3C laboratory for further testing. The vehicle speed was measured against two step inputs and the average system response was recorded. However, with the large amplitude of the noise of the data collected, an overshoot of Mp = 33.80% was recorded and it was indecisive whether steady state was reached, meaning that ts > 1.28s.  </p>
+											<span class="image main"><img src="images/IDS3C_Results-2.png" alt="" /></span>
+										</div>
+									</div>
+									<p>From the experimental data collected, more research is needed to tune the parameters based on the realistic response to step inputs observed. The assumptions used in creating this controller--such as modelling the system as a dampened step input or using second-order approximations for the gain calculations--will be analyzed with this new data as well. More accurate data collection is further needed as the noisy vehicle speed data found in the present analysis prevents meaningful conclusions from being drawn. </p>
+									<center>
+										<video autoplay muted loop width=80% class="right" muted>
+											<source src="/images/IDS3C_Video.mp4" type="video/mp4">
+										</video>
+									</center>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:andrewryansmith22@gmail.com?subject=Reply to your portfolio">andrewryansmith22@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(443) 981-0095</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Bel Air, MD 21014<br />
+									United States of America</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/andrew-smith-2002/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/a-smith-22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; 2024 Andrew Smith</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

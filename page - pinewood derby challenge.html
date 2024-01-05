@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Pinewood Derby Challenge</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>AS</strong> <span>Andrew Smith</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="landing - udel.html">University of Delaware</a></li>
+						<li><a href="landing - harford tech.html">Harford Technical High School</a></li>
+						<li><a href="landing - personal.html">Personal</a></li>
+						<li><a href="about me.html">About Me</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Pinewood Derby Challenge</h1>
+									</header>
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<h3>Project Scope</h3>
+											<p>The goal of this project was to design a pinewood derby car with the assistance of computational fluid dynamics software to create a car with low drag and high lift. The success of the car was measured by computing the theoretical time the car would take to reach the finish line and comparing it to all other designs submitted across the Fluid Mechanics II class.</p>
+											<span class="image main"><img src="images/Pinewood_Derby_Track.png" alt="" /></span>
+
+										</div>
+										<div class="col-6 col-12-medium">
+											<h3>Competition Rules</h3>
+											<p>The following design restrictions were placed on the design of the car in accordance with typical Pinewood Derby rules. In addition to the vehicle dimensions, the track is also customized for this project and features a ramped hill section and a flat straightaway before reaching the finish line.</p>
+											<span class="image main"><img src="images/Pinewood_Derby_Rules.png" alt="" /></span>
+
+										</div>
+									</div>
+									<h2>Final Design</h2>
+									<span class="image main"><img src="images/Pinewood_Derby_Car.png" alt="" /></span>
+									<p>The design of this vehicle was created after several iterations requiring a balance of several key performance parameters:</p>
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<h3>Potential Energy</h3>
+											<p>Most importantly, the center of mass of the vehicle needed to be as far back from the leading edge as possible to ensure that the car accelerates down the inclined ramp section of the track for longer and therefore has more speed when reaching the flat straightaway. Given that an added point mass was allowed to be included in the design, this meant having a small vehicle profile to minimize the starting mass and allow the center of mass location to be moved towards the rear wheel well. Note that the rear wheel position needed to also be moved further back as to allow the car to remain balanced. </p>
+										</div>
+										<div class="col-3 col-12-medium">
+											<h3>Friction</h3>
+											<p>The friction of the axles against the wheels of the car must be minimized throughout the race. As this geometry is fixed by competition rules, the effective normal force of the car against the track must be minimized which means maximizing the lift of the vehicle.</p>
+										</div>
+										<div class="col-3 col-12-medium">
+											<h3>Air Resistance</h3>
+											<p>Throughout the duration of travel, the air resistance will decelerate the vehicle so the drag force must be minimized. This meant minimizing the effective projected area of the car and minimizing the overall drag coefficient.</p>
+										</div>
+									</div>
+									<p>In the final design, these considerations were used to create the car profile shown above. This design is a long, slender airfoil design created to place the center of mass almost on top of the rear axle for maximum potential energy storage, a thin body shape to reduce the viscous drag forces, a cambered airfoil profile to maximize lift, and a bulbous nose to further increase the aerodynamics of the vehicle. The design was modelled using OnShape and was nicknamed the Orca5 given the resemblence of the nose shape to that of an Orca whale and the design being the fifth major iteration. </p>
+									<span class="image main"><img src="images/Pinewood_Derby_Car-2.png" alt="" /></span>
+									
+									<h2>Performance</h2>
+									<p>Given the complexity of the track and the vehicle dynamics, <a href="https://github.com/a-smith-22/pinewood_derby_simulation/blob/main/RungeKutta4.py">software was written to solve for the total runtime of the race</a> based on precalculated lift and drag coefficients, vehicle geometry, and mass properties. The dynamics of the race are simplified by assuming the car is dominated solely by potential energy during the ramp portion, and during the flat straightaway, operates at a fixed lift and drag coefficient. This greatly simplifies the vehicle dynamics to just two equations corresponding to each section of the track.</p>
+									<span class="image main"><img src="images/Pinewood_Derby_Equations.png" alt="" /></span>
+									<p>Using these equations, a fourth-order Runge-Kutta simulation was developed to determine the speed of the car at each timestep and therefore, compute the car's position throughout the race. With accurate lift and drag coefficients from SimScale computational fluid dynamics analysis, and mass/geometry properties calaculated from the CAD model in OnShape, the simulation can be refined to determine the exact expected runtime.</p>
+									<span class="image main"><img src="images/Pinewood_Derby_Sim.png" alt="" /></span>
+									<p>With the above analysis, a SimScale CFD simulation was perfomed (laminar steady-state model) to determine that the vehicle should generate just 0.14mN of lift force and 0.20mN of drag. While these are poor performing values for an airfoil, the complex dynamics show that this design was one of the most optimized given the small profile and center of mass location. Based on the simulated race time, a calculated time of t = 1.692429s was found for the vehicle. From the complete class dataset, this Pinewood Derby design was granted a trophy for being one of the top three fastest designs of the class. </p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:andrewryansmith22@gmail.com?subject=Reply to your portfolio">andrewryansmith22@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(443) 981-0095</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Bel Air, MD 21014<br />
+									United States of America</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/andrew-smith-2002/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/a-smith-22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; 2024 Andrew Smith</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

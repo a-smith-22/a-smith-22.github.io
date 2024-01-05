@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Glider Design Competition</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>AS</strong> <span>Andrew Smith</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="landing - udel.html">University of Delaware</a></li>
+						<li><a href="landing - harford tech.html">Harford Technical High School</a></li>
+						<li><a href="landing - personal.html">Personal</a></li>
+						<li><a href="about me.html">About Me</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Glider Design Competition</h1>
+									</header>
+									<h2>Project Description</h2>
+									<span class="image main"><img src="images/glider-design-4view.png" alt="" /></span>
+									<p>This project featured a class-wide competition for the best aerodynamic glider design. Success of the glider was divided into three seperate categories: endurance (total duration of flight), range (maximum horizontal distance travelled before landing), and altitude (maximum altitude reached during flight). Each glider was subject to several constraints such as the initial take off conditions (35 m/s takeoff at 20m height with 0deg angle of attack), body geometry (fixed fuselage and tail size and weight), and vehicle boundaries (maximum allowable wingspan width of 7m).</p>
+									<p>Several limiting factors were identified for the glider design, such as the weight density of the wing material, the center of mass location of the combined geometry, and the increased support (i.e., weight) needed near the base of the wings for larger lift-induced moments. The main factor of the design, however, was in the wing geometry as this would be the main source of both the lift and weight, both of which have the largest impact to the overall vehicle dynamics. To achieve a longer flight range, it was calculated that the lift to drag ratio (L/D) should be maximized. With this in mind, the glider was designed as shown above.</p>
+									<h2>Final Design</h2>
+									<span class="image main"><img src="images/glider-design-sim3.png" alt="" /></span>
+									<p>The lifting surfaces of the glider are divided into the main wing set and the tail wing set; this was done to create a counter lifting force to stabilize the pitch of the glider during flight. Each wing surface is constructed based on a truncated elliptical wing platform in order to minimize the induced drag and approach an ideal elliptical lift distribution desired. This is combatted by increasing the aspect ratio of both wing sets and the tips of each wing are given a large dihedral angle (i.e., winglet) to combat the induced drag as well. </p>
+									<p>The airfoil design was limited to NACA four-series airfoils as per the project constraints. As mentioned before, placing the center of lift closer to the fuselage of the glider greatly reduces the material needed to support the wings given the large lift moment (roll moment) that would have been created with a more uniform lift distribution. Therefore, airfoils with higher camber were desired near the fuselage, and more efficient airfoils (high L/D ratio) were desired near the tips of the wings. The airfoils used at the root (NACA6315) and tip (NACA5411) of the main wing set were compared using XFoil to simulate the flow across a range of attack angles. In addition to this larger camber, a higher L/D ratio was desired which was dependent upon the range of angles of attack the glider was expected to be subjected to based on preliminary analysis. For each section of the main wing set, as well as the tail wing, the L/D ratio was maximized while setting the lift coefficient to the amount needed for the desired lift distribution. This process involved several iterations, but results could be computed as shown below to quantify this process.</p>
+									<h2>Design Validation</h2>
+									<span class="image main"><img src="images/glider-design-sim1.png" alt="" /></span>
+									<p>The performance of the glider was computed first using XFoil to simulate the 2D flow over each wing section to optimize the airfoil selection, then through VSPAero (vortex lattice method flow solver in OpenVSP) to confirm the previous analysis as well as predict the overall lift and drag performance, then finally through SimScale to get the most accurate 3D simulation result. During the iteration process, XFoil and VSPAero were utilized to minimize computation time and to fine tune several of the design parameters such as the airfoil selection, wing dimensions, and wing posiitons. This optimization can be observed in the peak performance of each airfoil occuring around a given angle of attack set by the wing section twist as shown before. The results of the final glider design shown above were calculated via SimScale using k-omega SST turbulence model as shown below. </p>
+									<span class="image main"><img src="images/glider-design-sim2.png" alt="" /></span>
+									<h2>Path Forward</h2>
+									<p>Future iterations of the design were needed as shown by these simulation results and the calculated performance parameters from before. However, the overall design was optimized based on the unique conditions of the glider and the performance required. The tail wing position and orientation was strategically determined to utilize the deflected free stream flow from the main wing set (around 8 degrees) as well as to minimize the parasitic and induced drag forces. Early onset flow seperation was noted in this design which can be improved by further optimizing the airfoil selection and angle of attack in each wing section to achieve the same lift required but with reduced seperation penalty. Overall, the glider was able to reach almost 100m (5s flight) with substantial lift across the flight.</p>
+									<p>While this competition was limited to using four-series NACA airfoils for all wing cross-sectional geometry, future iterations may involve using a wider range of airfoils. For this, <a href="https://github.com/a-smith-22/airfoil_optimization/blob/main/AUTO_XFOIL.m">software was developed to automate the process of optimizing an airfoil</a> based on prescribed performance characteristics. This process operates by first creating an airfoil based on several other families of airfoils and parameters to tune the creation--this process involves singular value decomposition on this airfoil library and the software for this was developed by Dr. Van Buren at the University of Delaware. With this custom airfoil generated, the performance is evaluated using an implementation of XFoil in Matlab to automate the process and extract the key parameters, such as the average lift to drag ratio over a range of angles of attack. With the target objective defined, as well as the simulation scope to use, a hill climbing algorithm is employed to run this cycle repeatedly by slightly altering the tuning parameters for the airfoil creation and determining how much this effects the airfoil performance. Using such an algorithm would allow the glider to operate in the desired angle of attack range and ensure that the desired lift, drag, and lift to drag ratio performances are met for each wing section.</p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:andrewryansmith22@gmail.com?subject=Reply to your portfolio">andrewryansmith22@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(443) 981-0095</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Bel Air, MD 21014<br />
+									United States of America</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/andrew-smith-2002/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/a-smith-22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; 2024 Andrew Smith</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

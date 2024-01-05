@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Variable Speed Round Baler Pickup</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>AS</strong> <span>Andrew Smith</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="landing - udel.html">University of Delaware</a></li>
+						<li><a href="landing - harford tech.html">Harford Technical High School</a></li>
+						<li><a href="landing - personal.html">Personal</a></li>
+						<li><a href="about me.html">About Me</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Variable Speed Round Baler Pickup</h1>
+									</header>
+									
+									<h2>Introduction</h2>
+									<p>This project was completed as part of the Senior Design Capstone during the Fall 2023 semester and was sponsored by New Holland Agriculture, a brand of CNH Industrial. For this project, I took a leadership role in organizing all meetings, perparing all documentation and reports, taking a large role in the design process, and completing several design validation metrics on the final prototype. </p>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<h3>Problem Definition</h3>
+											<p>Consistent and densely formed hay bales are vital for commercial farming, but current PTO-driven pickup designs in round balers hinder the bale formation process. These designs currently on the market use fixed gear ratios from the power take-off of the tractor to power the pickup, which means these designs...
+												<ul>
+													<li>Cannot easily adjust to non-uniform windrows</li>
+													<li>Continuously power the pickup, causing increased fuel consumption</li>
+													<li>Lack independent speed control at the pickup</li>
+												</ul>
+											</p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h3>Project Scope</h3>
+											<p>The aforementioned issues leads to the project scope:</p>
+											<blockquote>In an effort to create more consistent bale sizes, a separate hydraulic motor needs to be integrated to power the pickup of a round baler in order to be able to have the pickup move at variable speeds rather than a fixed ratio based on the gear drive from the PTO input and without constraining the articulation of the pickup for travel.</blockquote>
+										</div>
+									</div>	
+									<h3>Metrics</h3>
+									<p>The evlaution of the project was determined by satisfaction of the following design metrics as outlined by the sponsor of the project. Due to intellectual property restrictions, several of the target values were omitted.</p>
+									<span class="image main"><img src="images/Round_Baler_Metrics.png" alt="" /></span>
+									
+									<h2>Final Design</h2>
+									<span class="image main"><img src="images/Round_Baler_Final-Design.png" alt="" /></span>
+									<p>The final design shown above was developed after a lengthy concept selection and design iteration process in order to refine and optimize the design before manufacturing. Concept selection was divided in two parts between the hydraulic motor to use and the location of this hydrualic motor on the baler. Using a weighted decision matrix, it was determined that mounting the motor directly to the RHS pickup plate which previously housed a clutch assembly would provide the most accessibility, and the simplicity would greatly limit costs and reliability concerns. A Pugh matrix was used to determine the best hydraulic motor to use, with several factors driving the decision making process such as: (1) the gear ratio range required between the motor and the pickup needed to achieve the target values of the pickup torque and speed, (2) the measurements of the motor such as the size and weight, and (3) the required mechanical drives such as sprocket sizes needed for the motor to be successfully implemented. </p>
+									<span class="image main"><img src="images/Round_Baler_Details.png" alt="" /></span>
+									<p>This design is constructed out of stock parts--such as with the hydraulic fittings, hoses, and motor; sprocket; and flow control valve--and sheet metal components, such as with the motor mount and two safety shields. Much of the design iterations focused on ensuring the motor sprocket has sufficient strength for continuous design, the hydraulic fittings can easily be assembled/oriented, and the hydraulic lines have sufficient room for their application. </p>
+									<p>The motor mount allows the motor to be attached to existing components on the round baler which means the assembly and design validation processes could be completed without destroying a current production model. The safety shields are designed to also be integrated to existing components and ensure safety compliance with the design without interferring with any of the hydraulic fittings. A mechanical spring flow control valve was used to limit the flow from the tractor to a range suitable for the motor to operate continuously without excess wear.</p>
+									
+									<h2>Design Validation</h2>
+									<h3>Functionality Testing</h3>
+									<div class="row">
+										<div class="col-5 col-12-small">
+											<p>The team was able to validate the functionality of our design by performing field measurements at various flow speeds. Due to the time of year of testing, the team had to use corn stalks rather than traditional hay material like alfalfa. While this crop was much heavier, denser, and had more moisture than is expected, the design was still able to successfully create several hay bales.</p>
+											<p>The assembled design was proven to take up minimal space, was easily accessible, and greatly improved the functionality of the current round baler design.</p>
+										</div>
+										<div class="col-7 col-12-small">
+											<center>
+												<video autoplay muted loop width=80% class="right" muted>
+													<source src="/images/Round_Baler_35pct-Test.mp4" type="video/mp4">
+												</video>
+											</center>
+											<p>From this test, it was determined that:</p>
+											<ul>
+												<li>The motor provides enough torque to create these bales even in these more adverse conditions</li>
+												<li>The pickup can operate successfully in a range of speeds larger than the original target values</li>
+											</ul>
+										</div>
+									</div>
+									<h3>Failure Analysis</h3>
+									<p>As part of the project metrics, the minimum lifetime of the design was determined by analyzing the most critical parts of the design as shown below. Literature analysis, engineering calculations, simulation results, and professional consultation were used during this process to ensure accuracy of all analyses.</p>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<h4>Mechanical System</h4>
+											<span class="image main"><img src="images/Round_Baler_Sprocket.png" alt="" /></span>
+											<p>Failure of the sprocket and drive chain were performed using finite element analysis and IWIS chain life calculation software. Based on the suspected loads the motor applies on the sprocket in a worst-case plug event scenario, a minimum factor of safety of FOS = 2.5 was found. Using the sprocket configuration, sprocket sizes, supplied power, and conservative estimates for the lubrication and shock on the chain, the chain was found to exceed the lifetime durability desired.</p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>Static Components</h4>
+											<span class="image main"><img src="images/Round_Baler_Motor-Mount.png" alt="" /></span>
+											<p>The motor mount was analyzed for its ability to withstand the weight of the various hydraulic components of the system while withstanding the torque of the motor during continuous operation. Based on finite element analysis results, a minimum factor of safety of FOS = 7.3 was found. The most critical bolts of the design were analyzed using distortion-energy theory and it was found that bolt deformation and joint seperation would not realistically occur.</p>
+										</div>
+									</div>
+									<h3>Safety Standards</h3>
+									<p>The team performed a series of safety validation tests on the final assembly to ensure full compliance with all relevant ASABE standards including:</p>
+									<ul>
+										<li>ISO 4254-11 (2010) Agricultural machinery — Safety — Part 11: Pick-up balers</li>
+										<li>ISO 10448 (1994) (E) Agricultural tractors — Hydraulic pressure for implements</li>
+										<li>ASAE S361.3 (1990) Safety for Portable Agricultural Auger Conveying Equipment</li>
+										<li>ANSI S318.19 (2022) Safety for Agricultural Field Equipment</li>
+										<li>ANSI AD3600 (2015) Tractors, machinery for agriculture and forestry, powered lawn and garden equipment - Operator's manuals - Content and format</li>
+									</ul>
+									<p>This included visual inspections, mechanical testing, engineering calculations, and eventually field testing by baling crop as shown before. While the design passed almost all safety standards, the ANSI standard for Safety of Agricultural Field Equipment outlines that any guards should be able to withstand a load of 270lbs, which FEA shows the safety shields could not handle causing the metric to be failed. However, this standard is for the typical operation of commercial agricultural equipment--so because this is a research and development prototype focused more on the functionality of the design, full compliance of these deployment-ready products will be achieved as part of the path forward of the project with future iterations. </p>
+									<p>The team has already determined several possible ways to satisfy this standard, such as (1) increasing the thickness of the safety shields or (2) extending the width of the shields across the entire length of the motor mount to have two sets of bolted connections for increased strength. </p>
+									
+									<h2>Discussion</h2>
+									<p>The project was a large success in allowing a current round baler model to be modified to incorporate a variable speed design and create several bales within the design specifications required. The overall design operated at a larger range of speeds than originally desired and was able to withstand several plug events with thicker hay material. The design was determined to have a sufficient durability desired for the round baler model, had minimal added weight which proves beneficial in reducing ground compression on crops, and was sustainable following CNH Industrial's sustainability guidelines. In addition to this, a cost analysis showed a relatively cheap design with several areas for drastic cost reduction in future iterations.</p>
+									<div class="row">
+										<div class="col-7 col-12-small">
+											<center>
+												<video autoplay muted loop width=80% class="right" muted>
+													<source src="/images/Round_Baler_45pct-Reverse-Test.mp4" type="video/mp4">
+												</video>
+												<p>Reverse functionality of the final design.</p>
+											</center>
+										</div>
+										<div class="col-5 col-12-small">
+											<p>Due to the implementation of a hydraulic motor independently powered from the rest of the baler, the design also showed reverse functionality in allowing the flow of the motor to be reverse during plug events. Typically, these plug events require a lengthy process to unjam the system to get back to operation again and sometimes, require the operator to exit the tractor cab to resolve this by hand. In this new design, plugs can be removed in seconds which has large implications to overall baling productivity.</p>
+										</div>
+										<p>For this project, I also completed an honors capstone analyzing the fuel consumption of the new design and determined the amount of expected savings the variable speed feature would bring. During this analysis, I created an interactive calculator to allow the engineering team at New Holland to set a variety of input parameters such as tractor ground speed, rated tractor engine speed, bale size, etc. and recieve out the expected fuel consumption of both the current and variable speed designs, the expected efficiency of the hydraulic system, the average bale throughput, and the overall savings in gallons per hour. Using brake specific fuel consumption plots, simulation fuel usage analysis, motor specifications, and ample literature research and professional consultation, it was determined that this design would cause fuel savings in typical operation.</p>
+										<p>The future of this project will require more extensive testing to get accurate field data measurements for realistic hay material and baling conditions. Failure analysis will be reassessed with laboratory destructive testing models used as well. In addition to the iterations mentioned previously, the design has capabilities to be implemented into a fully automated system with the hydraulic flow governed by the tractor's hydraulic flow control system, sensors implemented into the front of the tractor and pickup to determine the pickup speed needed for various windrow densities, and new sprockets added to the pickup drive system to further increase functionality and torque specifications at the pickup. </p>
+									</div>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:andrewryansmith22@gmail.com?subject=Reply to your portfolio">andrewryansmith22@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(443) 981-0095</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Bel Air, MD 21014<br />
+									United States of America</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/andrew-smith-2002/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/a-smith-22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; 2024 Andrew Smith</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
