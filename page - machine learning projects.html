@@ -6,7 +6,8 @@
 -->
 <html>
 	<head>
-		<title>Adjustable Corrugated Interface for Buoyancy Alteration</title>
+		<link rel="icon" href="images/bkgd-logo-small-2.png">
+		<title>Machine Learning Projects</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +20,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>AS</strong> <span>Andrew Smith</span></a>
+						<a href="index.html" class="logo"><img src="images/plain-logo.png" width=10% alt="Wesbite logo" /></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -43,83 +44,109 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Adjustable Corrugated Interface for </br>
-											Buoyancy Alteration ("ACIBA")</h1>
+										<h1>Machine Learning Projects</h1>
 									</header>
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p>These projects were completed as analyses employing machine learning tools to create multiple case studies. For each report below, an abstract is given as well as a link to a seperate HTML page containing all project contents and discussions. Click on the titles of any of the below case studies to explore further.</p>
+									<h3><a href="219_Project-1_ARSmith.html" class="image">"Effects of Weather on Predicted Motor Vehicle Accident Reports in New York City Using Supervised Machine Learning"</a></h3>
+									<blockquote>This project attempts to study the effects of regional weather data on motor vehicle accidents for New York City between the dates of October 12th, 2012 and December 31st, 2015. Correlations between the various weather features will be analyzed with respect to themselves and with the aggregate count for the reported motor vehicle accidents to determine which weather features can be excluded from analysis, and how the general weather trends impact the number of accidents by first order approximation. A machine learning algorithm will be selected, trained, and tested on the labelled data to determine the ability of such an algorithm to predict the liklihood of motor vehicle accidents. The applications for such analysis are numerous, including but not limited to warning drivers of hazardous weather conditions, preparing emergency services for influx of motor vehicle accidents using weather forecasting, determining monetary effects on weather conditions for insurance companies, etc.</br>
+									</br>
+									Regional weather data for New York City is gathered from Weather Underground for dates between July 1st, 1948 and Decemeber 31st, 2015 [1]. Data is used from GitHub as it has previously been compiled and tabulated--such process is beyond the scope of this report, refer to the referenced source for more information. A tabulated list of all reported motor vehicle accidents in New York City is collected from Data.World and ranges from October 12th, 2012 to April 14th, 2020 [2].</blockquote>
+									<p>[1] Zoni Nation. (2016). Weather for 24 US Cities. Weather Undergound. Github. Retrieved April 5, 2023 from https://github.com/zonination/weather-us.</br>
+										[2] City of New York. (2020, October 11). Motor Vehicle Collisions - Crashes. data.world. Retrieved April 5, 2023, from https://data.world/city-of-ny/h9gi-nx95	</p>
+
+		
 								</div>
 							</section>
+
+						<!-- Two -->
+						<section id="one">
+							<div class="inner">
+								<h3><a href="219_Project-2_ARSmith.html" class="image">"Prediction of College Tuition Rates Using Machine Learning Regression Models and Non-Financial Data"</a></h3>
+									<blockquote>This study relates the demographic and statistical figures of a university in the United States with its out-of-state tuition cost per student. Features considered for analysis exclude statistics inherently related to financial information--such as cost of room and board, alumni donations, etc.--and instead uses non-financial features such as the annual number of applications, number of enrolled and accepted students, students in the top 10% and 25% of their high school class, full and part time undergraduate populations, percentage of faculty with PhD's or terminal degrees, student-faculty ratio, graduation rate, and whether a school was a public or private institution. The data is gathered from 777 unique universities across the United States [1], and analysis is conducted on 539 colleges which were not considered outliers in any of the analyzed features. Such a study can predict how much a university will cost based on factors about the educational experience of the student body--this can be used to determine which colleges charge more or less than the predicted tuition rate to determine the value of education across the United States.</br>
+									</br>
+									Linear regression models are trained using these features with multiple regularization models applied. The coefficient of determination is computed for algorithm and measured against a baseline linear regression with no regularization applied. Using non-financial and financial feature sets, and with LASSO and ridge regularized linear regressions, the best performing algorithm was a k-nearest neighbors using the financial inclusive data set, with R^2=0.7039. Without the financial information with the same regression, R^2=0.6972 suggesting that financial information provides relevence to the tuition cost than what is observed with non-financial features. For this analysis, the features with the largest impact on increasing tuition were the number of accepted students, whether a school was a private college, and the number of faculty members with terminal degrees. The features which decreased the tuition the most were the number of enrolled students, the student-faculty ratio, and the number of applications each year.</blockquote>
+									<p>[1] Gupta, Y. (2019, October 28). US College Data. Kaggle. Retrieved May 2, 2023, from https://www.kaggle.com/datasets/yashgpt/us-college-data</p>
+							</div>
+						</section>
+
+						<!-- Two -->
+						<section id="one">
+							<div class="inner">
+								<h3><a href="219_Project-3_ARSmith.html" class="image">"On the Validity of Rural-Urban Polarization by Unsupervised and Network Clustering of Counties in the United States"</a></h3>
+								<blockquote>It is often stated that urban and rural regions of a country become polarized over time with increasing disperities between not only political affliations [1], but also with economic and demographic statistics. For the United States, a very populous nation with the fourth largest land area of any country [2], there may be an exagerated effect given the larger distances between densely populated regions seperated by large suburban and rural areas. However, while the political divide between rural and urban regions of the US has been extensively studied, namely in presidential and gubernatorial election results, there is less research on the validity of dividing the US into two succinct groups [1]. Evidence is therefore needed in determining the effectiveness of various county clusterings of the US based on these aforementioned factors.</br>
+								</br>Data on county statistics is collected from the United States Census Bureau from 2010 to 2019 [3]. A list of each US county and all counties which share a land border with said county is given by the county adjacency data from the United States Census Bureau as well [4]. The raw data files used for analysis are shown below. This study will perform a clustering analysis of counties in the United States to determine whether the binary view of the US is valid and if it conforms to the rural-urban polarization expected. Data is collected from the US census bureau from 2010 to 2019 and includes economic and demographic statistics for each county only; any political references are ignored for analysis. Clustering will be performed in two batches: unsupervised clustering, using k-means, agglomerative, and expectation-maximization clustering which are blind to inter-county adjacencies; and network clustering, using spectral clustering to have preference to nearby counties. Performance in each computation is measured using an average silhouette score across all clusters. Results indicate that the best clustering performance comes from considering the continental United States as a single cluster and thus provide evidence that a non-binary view of the United States is valid. Apart from political views, there is little evidence that the United States is signifantly different when comparing rural and urban regions, or any subgroup dividing the country for that matter.</blockquote>
+								<p>[1] Love, Hanna, and Tracy Hadden Loh. “The ‘rural-Urban Divide’ Furthers Myths about Race and Poverty-Concealing Effective Policy Solutions.” Brookings, December 8, 2020. https://www.brookings.edu/blog/the-avenue/2020/12/08/the-rural-urban-divide-furthers-myths-about-race-and-poverty-concealing-effective-policy-solutions/.</br>
+									[2] “Largest Countries in the World (by Area).” Worldometer. Accessed May 18, 2023. https://www.worldometers.info/geography/largest-countries-in-the-world/.</br>
+									[3] Whitcomb, Ryan, Joung Min Choi, and Bo Guan. “County Demographics CSV File.” CORGIS Datasets Project, from Austin Cory Bart, Dennis Kafura, Clifford A. Shaffer, Javier Tibau, Luke Gusukuma, Eli Tilevich, November 5, 2022. https://corgis-edu.github.io/corgis/csv/county_demographics/.</br>
+									[4] National Bureau of Economic Research. “County Adjacency.” NBER, from U.S. Census Bureau, May 8, 2017. https://www.nber.org/research/data/county-adjacency.</p>
+							</div>
+						</section>
+
+
 
 					</div>
 
 				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
 							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:andrewryansmith22@gmail.com?subject=Reply to your portfolio">andrewryansmith22@gmail.com</a>
+								</div>
 							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(443) 981-0095</span>
+								</div>
 							</section>
-						</div>
-					</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Bel Air, MD 21014<br />
+									United States of America</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
 							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://www.linkedin.com/in/andrew-smith-2002/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/a-smith-22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+								<li>&copy; 2024 Andrew Smith</li>
 							</ul>
 						</div>
 					</footer>
