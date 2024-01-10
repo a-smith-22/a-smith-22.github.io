@@ -6,7 +6,8 @@
 -->
 <html>
 	<head>
-		<title>Adjustable Corrugated Interface for Buoyancy Alteration</title>
+		<link rel="icon" href="images/bkgd-logo-small-2.png">
+		<title>Football Trajectory Simulation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +20,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>AS</strong> <span>Andrew Smith</span></a>
+						<a href="index.html" class="logo"><img src="images/plain-logo.png" width=10% alt="Wesbite logo" /></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -43,83 +44,107 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Adjustable Corrugated Interface for </br>
-											Buoyancy Alteration ("ACIBA")</h1>
+										<h1>Football Trajectory Simulation</h1>
 									</header>
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Project Description</h2>
+									<p>This project was a dynamical analysis of a football in flight being subjected to non-moving air resistance. The principle questions this study aimed at answering were:</p>
+									<ol>
+										<li>The generalized relationship between the launch angle and the range of the football</li>
+										<li>The optimal angle to throw the football to maximize the above range.</li>
+										<li>Whether an accurate simulation could be created such that a runner could be coordinated to recieve the football within a given timespan.</li>
+									</ol>
+									<h2>Methods</h2>
+									<div class="row">
+										<div class="col-4 col-12-medium">
+											<span class="image main"><img src="images/Football_Equations.png" alt="" /></span>
+										</div>
+										<div class="col-8 col-12-medium">
+											<p>The dynamics were solved for using dimensionless variables for the position of the ball as well as a combined drag coefficient to create a system of ordinary differential equations. An intrinsic coordinate system was applied in order to impose the condition that the aerodynamic drag acts tangential to the trajectory of the football. Note that the constants kappa and alpha are approximated for this application.</p>
+											<p>Using dimensionless variables simplified the analysis to just a system of two equations--note that the equations to the left can be written in terms of just the instantaneous velocity and directional angle to allow Euler's method to be used to solve for the position across the runtime of the simulation.  <a href="https://github.com/a-smith-22/football_trajectory/blob/main/Andrew_Smith_CODE.py">A python script was written</a> to solve this system using the fourth order Runge-Kutta method which can produce trajectory plots as well as iterate to find the optimal launch angle. </p>
+										</div>
+									</div>
+									<h2>Results</h2>
+									<p>Based on the objectives of this project defined by the project scope, the simulation created was used to plot the trajectory of the football to determine the overall path and compare it to the ideal parabolic shape, determine the optimal launch angle to use, and determine the relationship between the runner speed and the launch angle.</p>
+									<span class="image main"><img src="images/Football_Trajectory.png" alt="" /></span>
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<h3>Optimal Launch Angle</h3>
+											<span class="image main"><img src="images/Football_Range.png" alt="" /></span>
+											<p>Based on the above plot, a launch angle of 39.05 degrees is ideal for maximum range, around 6 degrees less than the ideal angle in the no air resistance case. The maximum range can also be determined using the dimensionless variables which for an NFL quarterback throwing 60 mph, a range of just 37.2 yards is expected meaning much less air resistance is achieved in actual applications due to ball rotation--this almost doubles the non-spinning range expected.</p>
+										</div>
+										<div class="col-6 col-12-medium">
+											<h3>Runner Control</h3>
+											<span class="image main"><img src="images/Football_Runner.png" alt="" /></span>
+											<p>With varying launch angles, the required runner speed can be plotted for the range of angles shown above. This means that for a ball thrown at 65 degrees +/- 3 degrees due to innaccuracies of the quarterback, the runner will have to run 12-15 mph to catch this ball which is realistically achievable. This analysis can be used to create an automated controller to predict the speed required to meet the ball based on the aforementioned dynamics, then adjust according to this simplified plant equation.</p>
+										</div>
+									</div>
+									
 								</div>
 							</section>
 
 					</div>
 
 				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
 							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:andrewryansmith22@gmail.com?subject=Reply to your portfolio">andrewryansmith22@gmail.com</a>
+								</div>
 							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(443) 981-0095</span>
+								</div>
 							</section>
-						</div>
-					</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Bel Air, MD 21014<br />
+									United States of America</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
 							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://www.linkedin.com/in/andrew-smith-2002/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/a-smith-22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+								<li>&copy; 2024 Andrew Smith</li>
 							</ul>
 						</div>
 					</footer>
