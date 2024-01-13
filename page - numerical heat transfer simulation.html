@@ -6,7 +6,8 @@
 -->
 <html>
 	<head>
-		<title>Adjustable Corrugated Interface for Buoyancy Alteration</title>
+		<link rel="icon" href="images/bkgd-logo-small-2.png">
+		<title>Numerical Heat Transfer Simulation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +20,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>AS</strong> <span>Andrew Smith</span></a>
+						<a href="index.html" class="logo"><img src="images/plain-logo.png" width=10% alt="Wesbite logo" /></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -43,83 +44,119 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Adjustable Corrugated Interface for </br>
-											Buoyancy Alteration ("ACIBA")</h1>
+										<h1>Numerical Heat Transfer Simulation</h1>
 									</header>
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Project Description</h2>
+									<div class="row">
+										<div class="col-7 col-12-small">
+											<p>The objective of this project was to create software to accurately simulate the transient heat transfer response across a thin rectangular plate subject to several prescribed boundary conditions. For this analysis, a 30cm x 30cm x 2cm plate of aluminum is placed in a room at STP conditions, and given the thickness of the plate used, 2D assumptions are valid. The boundary conditions at each of the edges are shown to the right in addition to insulating top and bottom surfaces (square faces) and a 20C starting temperature. The primary objective of this software is to be able to predict the temperature at any point on the surface of the plate with reasonable accuracy with minimal computational runtime needed.</p>
+										</div>
+										<div class="col-5 col-12-small">
+											<span class="image main"><img src="images/Heat_Transfer_Boundary-Conditions.png" alt="" /></span>
+										</div>
+									</div>
+
+									<h2>Methods</h2>
+									<h3>Finite Difference Equations</h3>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<span class="image main"><img src="images/Heat_Transfer_Equations.png" alt="" /></span>
+										</div>
+										<div class="col-6 col-12-small">
+											<p>Preliminary analysis shows a Biot number of Bi = 0.0017, but the non-trivial boundary conditions prevent a lumped capacitance approach to be used. Therefore, an explicit, 2D finite difference scheme is used to solve for the temperature at each node of the body. The edges are labelled A-D clockwise for analysis with A being the top edge shown. At each point (x,y) on the plate, the current temperature at time t = p is used in the equations on the left to compute the temperature at time t = p + 1. In generating these equations, it is noted that convergence can only be achieved for a Fourier number of Fo > 0.25 (see Equations 1a, 1c, and 1e)--based on the material and geometric properties of the system, this creates a minimum time step of dt = 55.1ms.</p>
+										</div>
+									</div>
+									<h3>Simulation Convergence</h3>
+									<p>The computation of this heat transfer simulation has two conflicting constraints: having an accurate solution while being fast to compute. In order to minimize the ammount of iterations needed to be performed to compute the final temperature distribution, the convergence of the system must be analyzed. This is done for the two major parameters of the system, the number of nodes along each edge of the plate (the total cells being equal to the (number of nodes)^2) and the time of evolution. </p>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<h4>Transient Response</h4>
+											<span class="image main"><img src="images/Heat_Transfer_Time.png" alt="" /></span>
+											<p>The steady state evolution was first explored with n = 11 nodes at various points on the surface of the plate. A time of t = 500s was determined to be sufficient for limiting computation while ensuring a steady state solution. In future analysis, with n = 41 and t = 600s, the average temperature change was estimated at dT/dt < 0.006 C/s with a temperature distribution changing by no more than 0.2C. Therefore, t = 500s was determined to be adequate for simulation runtime.</p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h4>Mesh Independence</h4>
+											<span class="image main"><img src="images/Heat_Transfer_Cells.png" alt="" /></span>
+											<p>Using a runtime of t = 500s with various amounts of nodes, a similar analysis was performed to show that the results were mesh independent. For increasing mesh refinement, diminishing changes to the temperature distribution are shown and at n = 41 nodes (1,681 cells), the average temperature across the plate does not change with smaller cell sizes. See the "Transient Response" analysis to show that n = 41 and t = 500s ensure convergence.</p>
+										</div>
+									</div>
+
+									<h2>Results</h2>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<p>The final temperature distribution is shown to the right. This project involved the successful creation of <a href="https://github.com/a-smith-22/heat_transfer_simulation-MEEG342/blob/main/MEEG342_Project-Code_Team-4.py">software to compute the temperature distribution across an aluminum plate</a> subjected to several complex boundary conditions. For this, a numercial heat transfer analysis was used to explicitly determine the temperature in each cell as time evolved. Analysis was conducted to determine that the solution's convergence was feasible given the cell size and time step, the runtime of the program was minimized for accurate results, and the results were independent of the meshing of the overall control volume. With this temperature distribution known, a bilinear interpolation can be created to create the color mapping shown.</p>
+										</div>
+										<div class="col-6 col-12-small">
+											<span class="image main"><img src="images/Heat_Transfer_Temperature-Distribution.png" alt="" /></span>
+										</div>
+									</div>
+
 								</div>
 							</section>
 
 					</div>
 
 				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
 							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:andrewryansmith22@gmail.com?subject=Reply to your portfolio">andrewryansmith22@gmail.com</a>
+								</div>
 							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(443) 981-0095</span>
+								</div>
 							</section>
-						</div>
-					</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Bel Air, MD 21014<br />
+									United States of America</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
 							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://www.linkedin.com/in/andrew-smith-2002/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/a-smith-22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+								<li>&copy; 2024 Andrew Smith</li>
 							</ul>
 						</div>
 					</footer>
