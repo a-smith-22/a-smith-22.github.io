@@ -6,7 +6,8 @@
 -->
 <html>
 	<head>
-		<title>Adjustable Corrugated Interface for Buoyancy Alteration</title>
+		<link rel="icon" href="images/bkgd-logo-small-2.png">
+		<title>Phone Case Material Analysis</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +20,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>AS</strong> <span>Andrew Smith</span></a>
+						<a href="index.html" class="logo"><img src="images/plain-logo.png" width=10% alt="Wesbite logo" /></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -43,83 +44,108 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Adjustable Corrugated Interface for </br>
-											Buoyancy Alteration ("ACIBA")</h1>
+										<h1>Phone Case Material Analysis</h1>
 									</header>
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Introduction</h2>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<h3>Project Scope</h3>
+											<p>This project analyzed a commericial product for improvements to the material selection choice across a variety of metrics. For this, a material analysis was conducted for a protective case of a smart phone in order to analyze the stresses expected during a dropping or compression event and design a cost effective, environmentally friendly, manufacturable case that could withstand this loading. The final selection will be validated using eco-audits and researching the proposed manufacturing methods for this implementation.</p>
+										</div>
+										<div class="col-6 col-12-small">
+											<h3>Problem Definition</h3>
+											<p>Modern phone case design has several competing factors which have created divergent material choices in order to maximize strength, user comfort, and aesthetic appeal while minimizing cost, socio-environmental impact, and weight. For this, preliminary analysis was conducted to determine several constraining factors such as the stiffness and density while setting objectives of minimizing cost and maximizing stiffness. </p>
+										</div>
+									</div>
+
+									<h2>Selection Process</h2>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<span class="image main"><img src="images/Phone_Case_Cover.png" alt="" /></span>
+										</div>
+										<div class="col-6 col-12-small">
+											<p>Using the constraining values and objective variables from before, the objective function of minimizing the total cost of the case needed to successfully protect the phone from substantial damage was created. In doing so, a material index of Mp = E^1/3 / Cv was created based on Young's Modulus (E) and the cost per unit volume (Cv). This material index was used to objectively rank differnt materials--Granta Edupack CES was used to create the plot shown on the left which showed that foams, honeycombs, and fibers were the top three material families to consider.</p>
+										</div>
+									</div>
+									<p>Several stages of the design process were needed in order to fully refine the material selection. The first stage, as shown above, identified the major material families available with similarly performing choices. However, several conditions were imposed such as the maximum density, biogradability, surface finish, etc. in order to reject materials like concrete and asphalt which theoretically are well-performing. With the materials screened based on the material constraints and design decisions, a list of candidate materials can be formed as shown below. For each material, the practicability can be decided based on that specific material's properties (e.g., the material crumbles on impact, the material is rough to the touch, etc.) and thus a final material selection stage is performed. Many of the materials listed are similar in properties (e.g., like expanded PS foam (closed cell, 0.025) and expanded PS foam (closed cell, 0.030)) but have similar justifications as to why they can or cannot be used and are thus grouped together. As this is the last stage of the selection processes, any of the materials which pass this stage can be used for the phone case as they have the ideal qualities desired, but only one is chosen as determined by best engineering judgment.</p>
+									<span class="image main"><img src="images/Phone_Case_Table.png" alt="" /></span>
+									<p>Based on the final material screening process described above, only two candidate materials are chosen for further analysis: polypropylene (PP) foam and polyvinyl chloride (PVC) foam. All other materials which passed the first round of screening are omitted as the material indices for these materials are too small to be feasible materials for consideration. While PVC foam has high strength and stiffness to weight ratios, similar chemical resistance to PP foam, and good impact strength, the material index is much lower than PP foam (31.3% of PP foam). PP foam thus has many similar properties to PVC foam, like its stiffness, chemical resistance, impact resistance, etc., but better performance in the metrics relevant to designing a case. In addition to also having great energy absorption, PP foam has all around weather protection, meaning excellent protection against freshwater, saltwater, weak and strong acids, weak and strong bases, and organic solvents. PP foam also is isotropic so it has similar impact resistance in any loading direction which is ideal for a phone case which can be dropped in a variety of orientations. Another advantage to PP foam is the increased recyclability of the material: around 5.54% of the material is recycled, and for some products like ARPRO, the material is 100% recyclable. Therefore, PP foam (closed cell, 0.040) is determined to be the best material for the phone case to be made of. </p>
+
+									<h2>Design Impact</h2>
+									<h3>Manufacturing Process</h3>
+									<p>The phone case is a small, lightweight design (small amount of material, 0 < w < 0.172kg) made out of polypropylene foam which needs to potentially be produced in large quantities. These factors greatly limit the manufacturing processes down to various moldings, thermo-forming, and polymer casting. However, based on the geometry of the part, the foam material used in the design, a need for potentially a large batch units, and the need to minimize cost in the long-term (including labor costs), injection molding is used. The process is thus described as follows: 1) sourcing the polypropylene plastic material, which is largely recycled, 2) forming the granular polymer needed for manufacturing (i.e., the injected material), 3) preparing the foaming process by inserting various chemicals into the mold to allow the material to expand when in the mold, 4) performing the injection molding process, and lastly 5) any secondary manufacturing (e.g. milling) and packaging. The present injection molding process largely benefits from having minimal material costs given the recyclability of the materials, minimal labor costs (mainly in preparing the foaming process within the mold), reduced long-term costs, and requires little to no secondary manufacturing. Therefore, injection molding is the ideal process to manufacture this product. </p>
+									
+									<h3>Eco-Audit Analysis</h3>
+									<p>A big concern for the material, however, is the limited (if any) recyclability of polypropylene foam. Polypropylene alone takes an estimated 20-30 years to biodegrade, which means the contribution of the material to landfills should be minimal. A large source of environmental and social concerns for the material are concerned with this end-of-life: landfills are seen to have a number of harmful effects on the local wildlife, raise water safety and pollution concerns, lower property values and pollute marginalized communities. Globally, were this material is manufactured and shipped overseas, increased ocean pollution and marine endangerment, increased global competition across the product’s supply chain, decreased brand loyalty, lowered domestic employment, and unethical outsourced labor raise serious concerns. From the analysis conducted on the material, the best case scenario for decreasing harmful socio-economic impacts (both locally and globally), having much more environmental and wildlife protection, minimizing health concerns long-term in the product’s life, and facilitate ethical consumption, is to domestically produce, manufacture, and transport the materials and product as much as possible. In addition to this, using recycled materials is the best way to achieve this as well. </p>
+									<p>An eco-audit on this life cycle analysis for the polypropylene foam phone case is conducted as shown below. Compared to the next-best material found from the final material selection and screening phase (polyvinyl chloride foam, PVCf), polypropylene foam (PPf) has slightly more energy consumption and carbon emissions at each stage of its life cycle. However, the differences between the materials are very slight and for both materials, the material sourcing is the most significant contributor. While PPf can be made from recycled materials as shown, PVCf cannot–-thus, while a raw material comparison suggests PVCf to be more energy and environmentally friendly, a small percentage of added recycled material of polypropylene to the production of PPf will produce drastically lower energy consumption and carbon footprint values. In addition, the lower material index of PVCf suggests that more of the product will be needed to achieve the same required stiffness, and thus potentially need more cost compared to this mass-to-mass study. Note also that in this analysis, the product is domestically produced but uses greatly inefficient transportation methods. Ideally, water based travel or transportation by train should be used for the product, but geographic factors largely hinder this. </p>
+									<span class="image main"><img src="images/Phone_Case_Eco-Audit.png" alt="" /></span>
+									<p>A cost analysis for the polypropylene foam phone case is conducted using similar values to the processes mentioned before. Using a batch size of 50,000 units (a higher number is needed for injection molding processes), a total material sourcing cost as well as injection molding production (e.g., labor, energy) and tooling (e.g., forming casts) costs give a product cost of $1.646 / unit. With transportation costs included (1000 mi total), the product cost is given a lower limit of $2.307 / unit. </p>
 								</div>
 							</section>
 
 					</div>
 
 				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
 							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:andrewryansmith22@gmail.com?subject=Reply to your portfolio">andrewryansmith22@gmail.com</a>
+								</div>
 							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(443) 981-0095</span>
+								</div>
 							</section>
-						</div>
-					</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Bel Air, MD 21014<br />
+									United States of America</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
 							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://www.linkedin.com/in/andrew-smith-2002/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/a-smith-22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+								<li>&copy; 2024 Andrew Smith</li>
 							</ul>
 						</div>
 					</footer>
